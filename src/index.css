@@ -1,0 +1,191 @@
+:root {
+  --bg-1: #f4f7fb;
+  --bg-2: #e9f1ff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  /* azul agradable */
+  --accent-600: #1e40af;
+  --danger: #dc2626;
+  --radius: 10px;
+  --gap: 0.75rem;
+}
+
+no-rows {
+  align-items: center;
+  text-align: center;
+}
+
+/* Base */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  margin: 0;
+  padding: 2rem;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 1.25rem 0;
+  font-weight: 600;
+  color: #0b1220;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  gap: var(--gap);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #e6e9ef;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.03);
+  transition: border-color .15s ease, box-shadow .15s ease, transform .06s ease;
+  font-size: 0.95rem;
+  color: #081029;
+  min-height: 38px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent);
+  border: none;
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.12);
+  transition: background-color .12s ease, transform .06s ease, box-shadow .12s ease;
+}
+
+button:hover {
+  background-color: var(--accent-600);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Secondary small buttons inside table */
+td button {
+  margin-right: 0.4rem;
+  background-color: #374151;
+  box-shadow: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+}
+
+td button:hover {
+  background-color: #111827;
+}
+
+/* Card / Table styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+th,
+td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #0b1220;
+}
+
+th {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  font-weight: 700;
+  color: #111827;
+  font-size: 0.92rem;
+}
+
+tr:nth-child(even) td {
+  background: #fbfdff;
+}
+
+tr td:first-child {
+  width: 40%;
+}
+
+/* Empty state / small screens */
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  body {
+    padding: 1rem;
+  }
+
+  form {
+    gap: 0.5rem;
+  }
+
+  th,
+  td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  tr td:first-child {
+    width: auto;
+  }
+}
+
+/* Utility small text */
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Focus outlines for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Small tweak: make links/buttons inside table easier to tap */
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
