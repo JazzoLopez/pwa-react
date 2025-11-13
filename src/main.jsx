@@ -11,8 +11,8 @@ root.render(
   </StrictMode>
 )
 
-// Registrar service worker para PWA (si está disponible)
-if ('serviceWorker' in navigator) {
+// Registrar service worker para PWA en producción solamente
+if (import.meta.env && import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').then((reg) => {
       console.log('Service worker registrado:', reg.scope)
