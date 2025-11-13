@@ -15,7 +15,7 @@ export default function Form({ addUser }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: "1rem" }}>
+    <form onSubmit={handleSubmit} className="user-form">
       <input
         type="text"
         name="name"

@@ -32,6 +32,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Contenedor central */
+.app-container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 1rem;
+}
+
 h2 {
   text-align: center;
   margin: 0 0 1.25rem 0;
@@ -46,6 +54,13 @@ form {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 1.25rem;
+}
+
+/* inputs y botones ocupen espacio adecuado */
+input,
+select,
+textarea {
+  width: 18rem;
 }
 
 input,
@@ -156,6 +171,18 @@ tr td:first-child {
 
   form {
     gap: 0.5rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
   }
 
   th,
@@ -166,6 +193,55 @@ tr td:first-child {
 
   tr td:first-child {
     width: auto;
+  }
+}
+
+/* Responsive table: convert rows to cards on small screens */
+@media (max-width: 720px) {
+  table {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    display: block;
+  }
+
+  tbody tr {
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    background: var(--card);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    border: none;
+    align-items: center;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #374151;
+    margin-right: 0.75rem;
+    flex: 0 0 40%;
+  }
+
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .actions button {
+    width: auto;
+    padding: 0.5rem 0.7rem;
   }
 }
 

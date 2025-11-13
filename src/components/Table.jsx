@@ -37,53 +37,55 @@ export default function Table({ users, onUpdate, onDelete }) {
                 ) : (
                     users.map((u) => (
                         <tr key={u.id}>
-                            <td>
+                            <td data-label="Nombre">
                                 {editing === u.id ? (
                                     <input name="name" value={form.name} onChange={handleChange} />
                                 ) : (
                                     u.name
                                 )}
                             </td>
-                            <td>
+                            <td data-label="Apellidos">
                                 {editing === u.id ? (
                                     <input name="lastname" value={form.lastname} onChange={handleChange} />
                                 ) : (
                                     u.lastname
                                 )}
                             </td>
-                            <td>
+                            <td data-label="Edad">
                                 {editing === u.id ? (
                                     <input name="age" value={form.age} onChange={handleChange} />
                                 ) : (
                                     u.age
                                 )}
                             </td>
-                            <td>
+                            <td data-label="Usuario">
                                 {editing === u.id ? (
                                     <input name="username" value={form.username} onChange={handleChange} />
                                 ) : (
                                     u.username
                                 )}
                             </td>
-                            <td>
+                            <td data-label="Email">
                                 {editing === u.id ? (
                                     <input name="email" value={form.email} onChange={handleChange} />
                                 ) : (
                                     u.email
                                 )}
                             </td>
-                            <td>
-                                {editing === u.id ? (
-                                    <>
-                                        <button onClick={() => handleUpdate(u.id)}>Guardar</button>
-                                        <button onClick={() => setEditing(null)}>Cancelar</button>
-                                    </>
-                                ) : (
-                                    <>
-                                        <button onClick={() => startEdit(u)}>Editar</button>
-                                        <button onClick={() => onDelete(u.id)}>Eliminar</button>
-                                    </>
-                                )}
+                            <td data-label="Acciones">
+                                <div className="actions">
+                                    {editing === u.id ? (
+                                        <>
+                                            <button onClick={() => handleUpdate(u.id)}>Guardar</button>
+                                            <button onClick={() => setEditing(null)}>Cancelar</button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <button onClick={() => startEdit(u)}>Editar</button>
+                                            <button onClick={() => onDelete(u.id)}>Eliminar</button>
+                                        </>
+                                    )}
+                                </div>
                             </td>
                         </tr>
                     ))

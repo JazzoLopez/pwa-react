@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), VitePWA(
     {
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'robots.txt'],
+      includeAssets: ['favicon.ico', 'robots.txt', 'icons/icon-192.png', 'icons/icon-512.png', 'screenshots/01.jpg'],
       workbox: {
         navigateFallback: '/index.html',
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
@@ -36,11 +36,11 @@ export default defineConfig({
         ],
         icons: [
           {
-            src: "/icons/01.png",
+            src: "/icons/icon-192.png",
             sizes: "192x192",
             type: "image/png"
           }, {
-            src: "/icons/01.png",
+            src: "/icons/icon-512.png",
             sizes: "512x512",
             type: "image/png"
           }
@@ -48,4 +48,7 @@ export default defineConfig({
       }
     }
   )],
+  server: {
+    host: true
+  },
 })

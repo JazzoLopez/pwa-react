@@ -49,8 +49,8 @@ function AppIndexedDB() {
     };
 
     return (
-        <div style={{ padding: "2rem" }}>
-            <h2>Usuarios (2)</h2>
+        <div className="app-container">
+            <h2>Usuarios (IndexedDB)</h2>
             <Form addUser={addUser} />
             <Table users={users} onUpdate={updateUser} onDelete={deleteUser} />
         </div>

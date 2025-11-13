@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div className="app-container">
       <h2>Usuarios</h2>
       <Form addUser={addUser} />
       <Table users={users} onUpdate={updateUser} onDelete={deleteUser} />
